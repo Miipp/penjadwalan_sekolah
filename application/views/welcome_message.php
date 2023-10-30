@@ -1,89 +1,87 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="icon" href="<?= images_url('sman1madang.png')?>">
+    <title>PENJADWALAN</title>
+  
+	<link rel="stylesheet" href="<?= backend_url('assets/vendor_components/bootstrap/dist/css/bootstrap.min.css')?>">
+	<link rel="stylesheet" href="<?= backend_url('css/horizontal-menu.css')?>">
+	<link rel="stylesheet" href="<?= backend_url('css/style.css')?>">
+	<link rel="stylesheet" href="<?= backend_url('css/skin_color.css')?>">	
 
-	<style type="text/css">
-
-	::selection { background-color: #E13300; color: white; }
-	::-moz-selection { background-color: #E13300; color: white; }
-
-	body {
-		background-color: #fff;
-		margin: 40px;
-		font: 13px/20px normal Helvetica, Arial, sans-serif;
-		color: #4F5155;
-	}
-
-	a {
-		color: #003399;
-		background-color: transparent;
-		font-weight: normal;
-	}
-
-	h1 {
-		color: #444;
-		background-color: transparent;
-		border-bottom: 1px solid #D0D0D0;
-		font-size: 19px;
-		font-weight: normal;
-		margin: 0 0 14px 0;
-		padding: 14px 15px 10px 15px;
-	}
-
-	code {
-		font-family: Consolas, Monaco, Courier New, Courier, monospace;
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
-
-	#body {
-		margin: 0 15px 0 15px;
-	}
-
-	p.footer {
-		text-align: right;
-		font-size: 11px;
-		border-top: 1px solid #D0D0D0;
-		line-height: 32px;
-		padding: 0 10px 0 10px;
-		margin: 20px 0 0 0;
-	}
-
-	#container {
-		margin: 10px;
-		border: 1px solid #D0D0D0;
-		box-shadow: 0 0 8px #D0D0D0;
-	}
-	</style>
 </head>
-<body>
+<body class="hold-transition theme-fruit bg-img" style="background-image: url('<?= backend_url('images/auth-bg/bg-23.jpg')?>');">
+	
+	<div class="h-p100">
+		<div class="row align-items-center justify-content-md-center h-p100">
+			<div class="col-lg-8 col-12">
+				<div class="row justify-content-center no-gutters">
+					<div class="col-xl-4 col-lg-7 col-md-6 col-12">
+						<div class="content-top-agile p-10">
+							<div class="logo">
+								<a href="#" class="aut-logo my-40 d-block">
+									<img src="<?= images_url('sman1madang.png')?>" height="75" alt="">
+								</a>
+							</div>
+							<h2 class="text-white">Sign in your session</h2>						
+						</div>
+						<div class="p-30">
+							<form action="<?= base_url('login')?>" method="post">
+								<div class="form-group">
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text text-white bg-transparent"><i class="ti-user"></i></span>
+										</div>
+										<input type="text"  name="username" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Username">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text text-white bg-transparent"><i class="ti-lock"></i></span>
+										</div>
+										<input type="password" name="password" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Password">
+									</div>
+								</div>
+								  <div class="row">
+									<div class="col-6">
+									  <div class="checkbox text-white">
+										<input type="checkbox" id="basic_checkbox_1" class="filled-in chk-col-danger" checked="">
+										<label for="basic_checkbox_1">Remember Me</label>
+									  </div>
+									</div>
+									<div class="col-6">
+									 <div class="fog-pwd text-right">
+									  </div>
+									</div>
+									<div class="col-12 text-center">
+									  <button type="submit" name="login" value="login" class="btn btn-warning btn-outline mt-10">SIGN IN</button>
+									</div>
+								  </div>
+							</form>														
 
-<div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
-
-	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
-
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/Welcome.php</code>
-
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+					
+							
+							<div class="text-center text-white">
+								<p class="mt-15 mb-0">&copy; 2023</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
-</div>
+	<script src="<?= backend_url('assets/vendor_components/jquery-3.3.1/jquery-3.3.1.js')?>"></script>
+	<script src="<?= backend_url('assets/vendor_components/screenfull/screenfull.js')?>"></script>
+	<script src="<?= backend_url('assets/vendor_components/popper/dist/popper.min.js')?>"></script>
+	<script src="<?= backend_url('assets/vendor_components/bootstrap/dist/js/bootstrap.min.js')?>"></script>
 
 </body>
 </html>

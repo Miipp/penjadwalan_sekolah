@@ -82,11 +82,7 @@
 							<label>Lokasi Gedung  <sup class="text-danger">*</sup></label>
 							<select class="form-control" id="gedung-lokasi">
 								<option value="">--Pilih Lokasi--</option>
-								<option value="area1">Area A</option>
-								<option value="area2">Area B</option>
-								<option value="area3">Area C</option>
-								<option value="area4">Area D</option>
-								<option value="area5">Area E</option>
+								<option value="madang1">Madang 1</option>
 							</select>
 						</div>
 					</div>

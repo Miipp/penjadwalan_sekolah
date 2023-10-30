@@ -18,7 +18,6 @@ class Ruang extends MY_Controller
 		}
 		$this->load->model('gedung_m');
 		$this->load->model('ruang_m');
-		$this->load->library('libencrypt');
 		$this->data['groupTitle'] = 'Data Ruangan';
 	}
 
@@ -65,23 +64,19 @@ class Ruang extends MY_Controller
 				'ruang_longitude' => $ruang_longitude,
 			];
 			$insert = $this->ruang_m->insert($data);
-			// if($insert['sts'] == 1){
-			// 	$nameQR = $insert['id'].$gedung_id.str_replace(" ", "", $ruang_kode).$ruang_lantai;
-			// 	$haskey = $this->libencrypt->encData($insert['id']."#@#".$gedung_id."#@#".str_replace(" ", "", $ruang_kode)."#@#".$ruang_lantai)."#$&#*#".$ruang_latitude."#$&#*#".$ruang_longitude;
-			// 	QRcode::png($haskey,'assets/uploads/ruang/'.$nameQR.".png","Q", 8, 8);
-
-			// 	$update = $this->ruang_m->update($insert['id'],['ruang_qrcode' => $nameQR.".png"]);
-
-			// 	$response = [
-			// 		'text' => MESSAGE_SUCCESS['ADD']['TEXT'],
-			// 		'info' => MESSAGE_SUCCESS['ADD']['INFO'],
-			// 	];
-			// } else {
-			// 	$response = [
-			// 		'text' => MESSAGE_FAIL['ADD']['TEXT'],
-			// 		'info' => MESSAGE_FAIL['ADD']['INFO'],
-			// 	];
-			// }
+			
+			if($insert['sts'] == 1){
+				
+				$response = [
+					'text' => MESSAGE_SUCCESS['ADD']['TEXT'],
+					'info' => MESSAGE_SUCCESS['ADD']['INFO'],
+				];
+			} else {
+				$response = [
+					'text' => MESSAGE_FAIL['ADD']['TEXT'],
+					'info' => MESSAGE_FAIL['ADD']['INFO'],
+				];
+			}
 		}
 		echo json_encode($response);
 	}
@@ -108,27 +103,20 @@ class Ruang extends MY_Controller
 			'ruang_longitude' => $ruang_longitude,
 		];
 		$update = $this->ruang_m->update($ruang_id,$data);
-		// if($update == 1){
+		if($update == 1){
 			
-		// 	$nameQR = $ruang_id.$gedung_id.str_replace(" ", "", $ruang_kode).$ruang_lantai;
-		// 	$haskey = $this->libencrypt->encData($ruang_id."#@#".$gedung_id."#@#".str_replace(" ", "", $ruang_kode)."#@#".$ruang_lantai)."#$&#*#".$ruang_latitude."#$&#*#".$ruang_longitude;
-		// 	QRcode::png($haskey,'assets/uploads/ruang/'.$nameQR.".png","Q", 8, 8);
-		// 	$update = $this->ruang_m->update($ruang_id,['ruang_qrcode' => $nameQR.".png"]);
-
-		// 	$response = [
-		// 		'text' => MESSAGE_SUCCESS['UPDATE']['TEXT'],
-		// 		'info' => MESSAGE_SUCCESS['UPDATE']['INFO'],
-		// 	];
-		// } else {
-		// 	$response = [
-		// 		'text' => MESSAGE_FAIL['UPDATE']['TEXT'],
-		// 		'info' => MESSAGE_FAIL['UPDATE']['INFO'],
-		// 	];
-		// }
+			$response = [
+				'text' => MESSAGE_SUCCESS['UPDATE']['TEXT'],
+				'info' => MESSAGE_SUCCESS['UPDATE']['INFO'],
+			];
+		} else {
+			$response = [
+				'text' => MESSAGE_FAIL['UPDATE']['TEXT'],
+				'info' => MESSAGE_FAIL['UPDATE']['INFO'],
+			];
+		}
 		echo json_encode($response);
 	}
-
-
 
 	public function delete_data(){
 		$id = $this->post('id');

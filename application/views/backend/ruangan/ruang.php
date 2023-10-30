@@ -34,15 +34,14 @@
 								<table class="table table-bordered table-striped mytables" id="mydata-tables">
 									<thead>
 										<tr>
-											<th>Gedung</th>
+											<th class="text-center">Gedung</th>
 											<th class="text-center">Kode Ruang</th>
 											<th class="text-center">Lantai</th>
 											<th class="text-center">Status</th>
 											<th class="text-center">Jenis</th>
 											<th class="text-center">Latitude</th>
 											<th class="text-center">Longitude</th>
-											<th>Keterangan</th>
-											<th class="text-center">QRCode</th>
+											<th class="text-center">Keterangan</th>
 											<th class="text-center">Aksi</th>
 										</tr>
 									</thead>
@@ -53,7 +52,6 @@
 											<td class="display-none"></td>
 											<td class="display-none"></td>
 											<td class="text-center"><h3 class="text-primary">&nbsp;</h3></td>
-											<td class="display-none"></td>
 											<td class="display-none"></td>
 											<td class="display-none"></td>
 											<td class="display-none"></td>
@@ -69,7 +67,6 @@
 		</section>
 	</div>
 </div>
-
 
 <div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
@@ -159,32 +156,6 @@
 			<div class="modal-footer modal-footer-uniform">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				<button type="button" class="btn btn-primary float-right" id="save_changes">Save changes</button>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-<div class="modal fade" id="modalQR" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="modalTite">QRCode</h5>
-				<button type="button" class="close" data-dismiss="modal">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="form-group"  id="ruang-imgQr">
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="modal-footer modal-footer-uniform text-center">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>

@@ -55,11 +55,7 @@ class Penjadwalan extends MY_Controller
 	public function get_data(){
 		$gedung = $this->post('gedung');
 		$gedung = str_replace("#","",$gedung);
-		if($gedung == 'km5'){
-			$gedung = 'KM 5';
-		} else {
-			$gedung = ucfirst($gedung);
-		}
+		$gedung = ucfirst($gedung);
 		$data = $this->jadwal_m->get_data($this->data['ta']->ta_id,$gedung);
 		echo json_encode($data);
 	}
@@ -67,20 +63,11 @@ class Penjadwalan extends MY_Controller
 	public function get_data_id(){
 		$id = $this->get('id');
 		$data = $this->jadwal_m->get_data_id($id);
-		$resdata = [];
-		if($data['jadwal']->prodi_id == $this->data['token']['prodi']){
-			$resdata = $data;
-			$response = [
-				'text' => MESSAGE_SUCCESS['GET']['TEXT'],
-				'info' => MESSAGE_SUCCESS['GET']['INFO'],
-			];
-		} else {
-			$resdata = [];
-			$response = [
-				'text' => MESSAGE_FAIL['GET_NO_AUTH']['TEXT'],
-				'info' => MESSAGE_FAIL['GET_NO_AUTH']['INFO'],
-			];
-		}
+		$resdata = $data;
+		$response = [
+			'text' => MESSAGE_SUCCESS['GET']['TEXT'],
+			'info' => MESSAGE_SUCCESS['GET']['INFO'],
+		];
 
 		$res = [
 			'response' => $response,
@@ -88,30 +75,23 @@ class Penjadwalan extends MY_Controller
 		];
 		echo json_encode($res);
 	}
+	
 	public function editTanggal(){
 		$id = $this->post('id');
 		$start = $this->post('start');
 		$end = $this->post('end');
 		$hari = $this->post('hari');
-		$cek = $this->jadwal_m->get_data_id($id);
+		$update = $this->jadwal_m->update($id,['jadwal_hari' => $hari,'jadwal_jam_masuk' => $start,'jadwal_jam_keluar' => $end]);
 
-		if($cek['jadwal']->prodi_id == $this->data['token']['prodi']){
-			$update = $this->jadwal_m->update($id,['jadwal_hari' => $hari,'jadwal_jam_masuk' => $start,'jadwal_jam_keluar' => $end]);
-			if($update == 1){
-				$response = [
-					'text' => MESSAGE_SUCCESS['UPDATE']['TEXT'],
-					'info' => MESSAGE_SUCCESS['UPDATE']['INFO'],
-				];
-			} else {
-				$response = [
-					'text' => MESSAGE_FAIL['UPDATE']['TEXT'],
-					'info' => MESSAGE_FAIL['UPDATE']['INFO'],
-				];
-			}
+		if($update == 1){
+			$response = [
+				'text' => MESSAGE_SUCCESS['UPDATE']['TEXT'],
+				'info' => MESSAGE_SUCCESS['UPDATE']['INFO'],
+			];
 		} else {
 			$response = [
-				'text' => MESSAGE_FAIL['GET_NO_AUTH']['TEXT'],
-				'info' => MESSAGE_FAIL['GET_NO_AUTH']['INFO'],
+				'text' => MESSAGE_FAIL['UPDATE']['TEXT'],
+				'info' => MESSAGE_FAIL['UPDATE']['INFO'],
 			];
 		}
 		echo json_encode($response);
@@ -120,11 +100,7 @@ class Penjadwalan extends MY_Controller
 	public function get_ruangan(){
 		$lokasi = $this->get('lokasi');
 		$lokasi = str_replace("#","",$lokasi);
-		if($lokasi == 'km5'){
-			$lokasi = 'KM 5';
-		} else {
-			$lokasi = ucfirst($lokasi);
-		}
+		$lokasi = ucfirst($lokasi);
 		$data = $this->ruang_m->group_gedung($lokasi);
 		echo json_encode($data);
 	}

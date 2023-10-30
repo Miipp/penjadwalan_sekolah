@@ -51,6 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['dashboard']='backend/home';
 
+$route['penjadwalan']='backend/penjadwalan_front';
+
 $route['ruangan/gedung']='backend/ruangan/gedung';
 $route['ruangan/ruang']='backend/ruangan/ruang';
 $route['ruangan/barang']='backend/ruangan/barang';
@@ -63,7 +65,7 @@ $route['jadwal/penjadwalan']='backend/jadwal/penjadwalan';
 $route['master/dosen']='backend/master/dosen';
 $route['master/fakultas']='backend/master/fakultas';
 $route['master/jurusan']='backend/master/jurusan';
-$route['master/prodi']='backend/master/prodi';
+// $route['master/prodi']='backend/master/prodi';
 #<<
 $route['master/kelas']='backend/master/kelas';
 #>>
@@ -76,5 +78,8 @@ $route['absen/checkout']='backend/jadwal/absen/checkout';
 $route['404-error']='errpage/notfound_err';
 $route['406-error']='errpage/nojs_err';
 $route['default_controller'] = 'backend/home';
+
+// $route['default_controller'] = '';
+
 $route['404_override'] = 'errpage/notfound_err';
 $route['translate_uri_dashes'] = FALSE;

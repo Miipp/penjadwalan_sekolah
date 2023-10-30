@@ -39,7 +39,7 @@ class Gedung extends MY_Controller
 		$gedung_nama = $this->post('gedung_nama');
 		$gedung_lokasi = $this->post('gedung_lokasi');
 		$gedung_keterangan = $this->post('gedung_keterangan');
-		if(empty($gedung_nama) || empty($gedung_lokasi)){
+		if(empty($gedung_nama)){
 			$response = [
 				'text' => MESSAGE_FAIL['FORM_REQUIRED']['TEXT'],
 				'info' => MESSAGE_FAIL['FORM_REQUIRED']['INFO'],

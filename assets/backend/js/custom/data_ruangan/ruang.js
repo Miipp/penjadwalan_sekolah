@@ -83,7 +83,7 @@ $('#save_changes').click(function(){
 	} else {
 		url = 'update_data';
 	}
-	send_data(JSON.stringify(data),url)
+	send_data(JSON.stringify(data),url);
 });
 
 

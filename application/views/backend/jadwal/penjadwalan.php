@@ -23,24 +23,12 @@
 
 				<div class="col-xl-12 col-12">
 					<div class="box">
-						<div class="box-body">
+						<div class="box-body">							
 							<ul class="nav nav-tabs justify-content-center" role="tablist" id="tab-jadwal">
-								<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#area1" role="tab"><span><i class="fa fa-calendar-check-o"></i></span> <span class="hidden-xs-down ml-15">Area A</span></a> </li>
-								<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#area2" role="tab"><span><i class="fa fa-clock-o"></i></span> <span class="hidden-xs-down ml-15">Area B</span></a> </li>
-								<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#area3" role="tab"><span><i class="fa fa-cogs"></i></span> <span class="hidden-xs-down ml-15">Area C</span></a> </li>
-								<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#area4" role="tab"><span><i class="fa fa-bullseye"></i></span> <span class="hidden-xs-down ml-15">Area D</span></a> </li>
-								<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#area5" role="tab"><span><i class="fa fa-server"></i></span> <span class="hidden-xs-down ml-15">Area E</span></a> </li>
+								<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#madang1" role="tab"><span><i class="fa fa-calendar-check-o"></i></span> <span class="hidden-xs-down ml-15">Penjadwalan SMAN Madang 1</span></a> </li>
 							</ul>
 							<div class="tab-content">
-								<div class="tab-pane active" id="area1" role="tabpanel">
-								</div>
-								<div class="tab-pane" id="AreaB" role="tabpanel">
-								</div>
-								<div class="tab-pane" id="AreaC" role="tabpanel">
-								</div>
-								<div class="tab-pane" id="AreaD" role="tabpanel">
-								</div>
-								<div class="tab-pane" id="AreaE" role="tabpanel">
+								<div class="tab-pane active" id="madang1" role="tabpanel">
 								</div>
 							</div>
 							<div id="div-calender">
@@ -110,55 +98,6 @@
 						<div class="box-body">
 							<div id="div-calender">
 								<div id='calendar_report'></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-12">
-					<div class="box">
-						<div class="box-header">
-							<h3 class="box-title">Data <?= $title ?></h3>
-							<div class="box-controls pull-right">
-								<!-- <button class="btn btn-info" href="#" data-target="#modalForm" data-toggle="modal" id="createData">Tambah Data</button> -->
-							</div>
-						</div>
-						<div class="box-body">
-							<div class="table-responsive">
-								<table class="table table-bordered table-striped mytables" id="mydata-tables">
-									<thead>
-										<tr>
-											<th class="text-center" rowspan="2">No.</th>
-											<th class="text-center" rowspan="2">Hari</th>
-											<th class="text-center" colspan="2">Jam</th>
-											<th class="text-center" rowspan="2">Ruang</th>
-											<th class="text-center" rowspan="2">SKS</th>
-											<th class="text-center" rowspan="2">Semester</th>
-											<th class="text-center" rowspan="2">Kelas</th>
-											<th class="text-center" rowspan="2">Mata Pelajaran</th>
-											<th class="text-center" rowspan="2">Nama Guru</th>
-											<th class="text-center" rowspan="2">Aksi</th>
-										</tr>
-										<tr>
-											<th class="text-center">Masuk</th>
-											<th class="text-center">Keluar</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td class="display-none"></td>
-											<td class="display-none"></td>
-											<td class="display-none"></td>
-											<td class="display-none"></td>
-											<td class="display-none"></td>
-											<td class="display-none"></td>
-											<td class="text-center"><h3 class="text-primary">&nbsp;</h3></td>
-											<td class="display-none"></td>
-											<td class="display-none"></td>
-											<td class="display-none"></td>
-											<td class="display-none"></td>
-										</tr>
-									</tbody>
-								</table>
 							</div>
 						</div>
 					</div>
@@ -306,101 +245,3 @@
 		</div>
 	</div>
 </div>
-<!-- 
-<div class="modal fade" id="modal-new-jadwal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="modalTite">Loading...</h5>
-				<button type="button" class="close" data-dismiss="modal">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<div class="row">
-					<div class="col-md-4">
-						<div class="form-group">
-							<input type="hidden" id="jadwal-id">
-							<label>Hari <sup class="text-danger">*</sup></label>
-							<?php $hari = ['Senin','Selasa','Rabu','Kamis','Jumat','Sabtu']; ?>
-							<select id="jadwal-hari" class="form-control" disabled>
-								<option value="">--Pilih Hari--</option>
-								<?php foreach($hari as $i): ?>
-									<option value="<?= $i ?>"><?= $i ?></option>
-								<?php endforeach; ?>
-							</select>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="form-group">
-							<label>Jam Masuk <sup class="text-danger">*</sup></label>
-							<input type="time" class="form-control" id="jadwal-masuk" >
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="form-group">
-							<label>Jam Keluar <sup class="text-danger">*</sup></label>
-							<input type="time" class="form-control" id="jadwal-keluar" disabled>
-						</div>
-					</div>
-					<div class="col-md-12">
-						<div class="form-group">
-							<label>Ruang <sup class="text-danger">*</sup></label>
-							<select id="ruang-id" class="form-control">
-								<option value="">--Pilih Ruang--</option>
-								<?php foreach($ruang as $i): ?>
-									<option value="<?= $i->ruang_id ?>"><?= $i->ruang_kode ?></option>
-								<?php endforeach; ?>
-							</select>
-						</div>
-					</div>
-					<div class="col-md-12">
-						<div class="form-group">
-							<label>Mata Kuliah <sup class="text-danger">*</sup></label>
-							<select id="mk-id" class="form-control">
-								<option value="">--Pilih Mata Kuliah--</option>
-								<?php foreach($mata_kuliah as $i): ?>
-									<option value="<?= $i->mk_id ?>"><?= $i->mk_nama ?></option>
-								<?php endforeach; ?>
-							</select>
-						</div>
-					</div>
-					<div class="col-md-12">
-						<div class="form-group">
-							<label>Dosen <sup class="text-danger">*</sup></label>
-							<select id="dosen-id" class="form-control">
-								<option value="">--Pilih Dosen--</option>
-								<?php foreach($dosen as $i): ?>
-									<option value="<?= $i->dosen_id ?>"><?= $i->dosen_nama ?></option>
-								<?php endforeach; ?>
-							</select>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="form-group">
-							<label>Kelas <sup class="text-danger">*</sup></label>
-							<input type="text" class="form-control" id="jadwal-kelas" placeholder="Kelas">
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="form-group">
-							<label>Semester <sup class="text-danger">*</sup></label>
-							<input type="text" class="form-control" id="jadwal-semester" placeholder="Semester">
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="form-group">
-							<label>SKS <sup class="text-danger">*</sup></label>
-							<input type="number" class="form-control" id="jadwal-sks" placeholder="SKS">
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="modal-footer modal-footer-uniform">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary float-right" id="save_changes">Save changes</button>
-			</div>
-		</div>
-	</div>
-</div>
- -->

@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="<?= backend_url('css/skin_color.css')?>">	
 
 </head>
-<body class="hold-transition theme-fruit bg-img" style="background-image: url('<?= backend_url('images/auth-bg/bg-2.jpg')?>');">
+<body class="hold-transition theme-fruit bg-img" style="background-image: url('<?= backend_url('images/auth-bg/bg-23.jpg')?>');">
 	
 	<div class="h-p100">
 		<div class="row align-items-center justify-content-md-center h-p100">
@@ -26,10 +26,10 @@
 						<div class="content-top-agile p-10">
 							<div class="logo">
 								<a href="#" class="aut-logo my-40 d-block">
-									<img src="<?= images_url('unsri.png')?>" height="75" alt="">
+									<img src="<?= images_url('sman1madang.png')?>" height="75" alt="">
 								</a>
 							</div>
-							<h2 class="text-white">Sign in your session</h2>						
+							<h2 class="text-white">Web Penjadwalan SMAN 1 Madang</h2>						
 						</div>
 						<div class="p-30">
 							<form action="<?= base_url('login')?>" method="post">
@@ -69,7 +69,7 @@
 					
 							
 							<div class="text-center text-white">
-								<p class="mt-15 mb-0">&copy; 2021</p>
+								<p class="mt-15 mb-0">&copy; 2023</p>
 							</div>
 						</div>
 					</div>

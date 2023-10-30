@@ -93,7 +93,7 @@
 								<option value="Pimpinan">Pimpinan</option>
 								<option value="Superadmin">Superadmin</option>
 								<option value="Prodi">Prodi</option>
-								<option value="Dosen">Dosen</option>
+								<option value="Dosen">Guru</option>
 							</select>
 						</div>
 					</div>
@@ -113,9 +113,9 @@
 					</div>
 					<div class="col-md-12">
 						<div class="form-group">
-							<label>Fakultas  <sup class="text-danger">*</sup></label>
+							<label>Sekolah  <sup class="text-danger">*</sup></label>
 							<select id="user-fakultas" class="form-control select2" style="width:100%">
-								<option value="">--Pilih Fakultas--</option>
+								<option value="">--Pilih Sekolah--</option>
 							</select>
 						</div>
 					</div>
@@ -129,9 +129,9 @@
 					</div>
 					<div class="col-md-12">
 						<div class="form-group">
-							<label>Prodi  <sup class="text-danger">*</sup></label>
+							<label>Kelas  <sup class="text-danger">*</sup></label>
 							<select id="user-prodi" class="form-control select2" style="width:100%" disabled>
-								<option value="">--Pilih Prodi--</option>
+								<option value="">--Pilih Kelas--</option>
 							</select>
 						</div>
 					</div>

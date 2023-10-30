@@ -4,7 +4,7 @@ var reportCalendar = {};
 var newEvent = {};
 var reportApiUrl = '/backend/jadwal/penjadwalan/get_jadwal_perprodi?';
 // let activeTab = '#palembang';
-let activeTab = '#area1';
+let activeTab = '#madang1';
 $(function(){
 	get_data_jadwal(activeTab);
 	loadCalender(activeTab);
